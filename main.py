@@ -1,5 +1,6 @@
 import streamlit as st  # st is the module
 from pathlib import Path
+import pandas
 
 st.set_page_config(layout="wide")
 
@@ -23,3 +24,15 @@ with col2:
     Below you can find apps I have built on python.
         """
     st.write(content2)
+    
+    col3, col4 = st.columns(2)
+
+    df = pandas.read_csv("data.csv", sep=";")
+    
+    with col3:
+        for index, row in df[:10].iterrows():
+            st.header(row["title"])
+
+    with col4:
+        for index, row in df[10:].iterrows():
+            st.header(row["title"])
