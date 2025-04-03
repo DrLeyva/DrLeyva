@@ -18,3 +18,8 @@ with col2:
     # st.markdown(f"<div style='font-size: 18px; line-height: 1.4;'>{content}</div>", unsafe_allow_html=True)
 
     st.info(content)
+
+    content2 = """
+    Below you can find apps I have built on python.
+        """
+    st.write(content2)
